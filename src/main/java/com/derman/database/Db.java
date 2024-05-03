@@ -5,37 +5,25 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Db {
-    private String url = "jdbc:postgresql://localhost:5432/postgres";
-    private String username = "postgres";
-    private String password = "postgres";
+    private static final String url = "jdbc:postgresql://localhost:5432/derman";
+    private static final String username = "postgres";
+    private static final String password = "postgres";
 
-    private Connection connection;
-
-    public Connection createConnection(){
+    public static Connection connect() throws SQLException {
         try{
-            connection = DriverManager.getConnection(url,username,password);
-            if(connection != null){
-                System.out.println("Db Bağlantısı Başarılı !");
-            }
-            return connection;
-        }catch (SQLException err){
-            System.out.println("Db Bağlantı Hatası !");
-            System.out.println(err.getMessage());
+            // open a connection
+            return DriverManager.getConnection(url,username,password);
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
             return null;
         }
     }
 
-    public Connection getConnection() {
-        return connection;
-    }
 
-    public void closeConnection(){
-        try{
-            connection.close();
-        }catch (SQLException err){
-            System.out.println("Db Bağlantı Kapatma Hatası !");
-            System.out.println(err.getMessage());
-        }
-    }
+
+
+
+
+
 
 }

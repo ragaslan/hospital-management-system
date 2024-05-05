@@ -11,6 +11,9 @@ public class AppointmentCalender {
     private JList list4;
     private JButton randevuOluşturButton;
     private JList list5;
-    private JTable table1;
+    private JPanel appointmentCalenderPanel;
 
+    public JPanel getAppointmentCalenderPanel() {
+        return appointmentCalenderPanel;
+    }
 }

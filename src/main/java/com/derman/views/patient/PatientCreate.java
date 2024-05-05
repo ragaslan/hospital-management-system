@@ -10,4 +10,10 @@ public class PatientCreate {
     private JTextField textField5;
     private JTextField textField6;
     private JButton kaydetButton;
+    private JPanel patientCreatePanel;
+    private JTextField textField2;
+
+    public JPanel getPatientCreatePanel() {
+        return patientCreatePanel;
+    }
 }

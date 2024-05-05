@@ -7,4 +7,9 @@ public class DoctorMenu {
     private JButton hastaKaydıGüncellemeButton;
     private JButton hastaKaydıGörüntülemeButton;
     private JButton tedaviKaydıOluşturmaButton;
+    private JPanel doctorMenuPanel;
+
+    public JPanel getDoctorMenuPanel() {
+        return doctorMenuPanel;
+    }
 }

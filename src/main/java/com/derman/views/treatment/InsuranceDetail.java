@@ -8,4 +8,9 @@ public class InsuranceDetail {
     private JTextField textField1;
     private JTextField textField3;
     private JButton ödemeyiTamamlaButton;
+    private JPanel insuranceDetailPanel;
+
+    public JPanel getInsuranceDetailPanel() {
+        return insuranceDetailPanel;
+    }
 }

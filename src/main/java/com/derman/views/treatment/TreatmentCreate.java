@@ -11,4 +11,9 @@ public class TreatmentCreate {
     private JTextField textField4;
     private JButton hastaKaydınıGörüntüleButton;
     private JButton kaydetButton;
+    private JPanel treatmentCreatePanel;
+
+    public JPanel getTreatmentCreatePanel() {
+        return treatmentCreatePanel;
+    }
 }

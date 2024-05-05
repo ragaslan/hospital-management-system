@@ -8,4 +8,9 @@ public class PolyclinicCreate {
     private JTextField textField1;
     private JButton kaydetButton;
     private JComboBox comboBox1;
+    private JPanel polyclinicCreatePanel;
+
+    public JPanel getPolyclinicCreatePanel() {
+        return polyclinicCreatePanel;
+    }
 }

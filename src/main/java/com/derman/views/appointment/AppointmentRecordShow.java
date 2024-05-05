@@ -7,9 +7,11 @@ public class AppointmentRecordShow {
     private JButton profilButton;
     private JButton geriButton;
     private JButton hastaKaydıOluşturButton;
-    private JTable table1;
+    private JPanel appointmentRecordShowPanel;
 
-    public AppointmentRecordShow(){
-        table1.addColumn(new TableColumn());
+    public JPanel getAppointmentRecordShowPanel() {
+        return appointmentRecordShowPanel;
     }
+
+
 }

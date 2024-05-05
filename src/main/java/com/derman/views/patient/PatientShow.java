@@ -13,4 +13,9 @@ public class PatientShow {
     private JTextField textField6;
     private JTextField textField7;
     private JTextField textField8;
+    private JPanel patientShowPanel;
+
+    public JPanel getPatientShowPanel() {
+        return patientShowPanel;
+    }
 }

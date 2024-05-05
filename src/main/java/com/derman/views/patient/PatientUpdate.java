@@ -14,4 +14,9 @@ public class PatientUpdate {
     private JTextField textField7;
     private JTextField textField8;
     private JButton bilgileriGüncelleButton;
+    private JPanel patientUpdatePanel;
+
+    public JPanel getPatientUpdatePanel() {
+        return patientUpdatePanel;
+    }
 }

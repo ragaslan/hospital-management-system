@@ -8,4 +8,9 @@ public class TreatmentRecordShow {
     private JTextField textField1;
     private JTextField textField3;
     private JButton sigortaBilgisiSorgulaButton;
+    private JPanel treatmentRecordShowPanel;
+
+    public JPanel getTreatmentRecordShowPanel() {
+        return treatmentRecordShowPanel;
+    }
 }

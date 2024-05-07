@@ -12,7 +12,6 @@ public class AuthController {
         // get db connection and authenticate user
         try(var connection = Db.connect()){
             Account user = AccountController.getAccountByUsername(username);
-            System.out.println(user.getUsername());
             if(user != null){
                 if(user.getPassword().equals(password)){
                     return new ApplicationResponse<Account>(true,"Kullanıcı bulundu !",user);

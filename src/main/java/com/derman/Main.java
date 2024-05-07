@@ -121,7 +121,6 @@ public class  Main {
         frame.setVisible(true);
 
         cardLayout.show(cardPanel,"Giriş");
-
     }
 
 }

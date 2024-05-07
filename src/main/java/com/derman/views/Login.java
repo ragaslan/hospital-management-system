@@ -57,7 +57,6 @@ public class Login{
                                     break;
                             }
                         }
-                        System.out.println(response.getData());
                     }else{
                         AlertBox.ShowError(loginContentPanel,response.getMessage());
                     }
@@ -65,8 +64,5 @@ public class Login{
 
             }
         });
-
-
     }
-
 }

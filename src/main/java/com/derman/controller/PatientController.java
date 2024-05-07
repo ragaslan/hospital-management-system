@@ -39,7 +39,28 @@ public class PatientController {
         return null;
     }
 
+    public static void updatePatient(Patient patient){
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String sql = "UPDATE patient SET name = ?, surname = ?, phone = ?, address = ?, blood = ?, alergies = ?, diseases = ?, tc = ? WHERE id = ?";
+                PreparedStatement pstmt = connection.prepareStatement(sql);
 
+                pstmt.setString(1,patient.getName());
+                pstmt.setString(2,patient.getSurname());
+                pstmt.setString(3,patient.getPhone());
+                pstmt.setString(4,patient.getAddress());
+                pstmt.setString(5,patient.getBlood());
+                pstmt.setString(6,patient.getAlergies());
+                pstmt.setString(7,patient.getDiseases());
+                pstmt.setString(8,patient.getTc());
+                pstmt.setInt(9,patient.getId());
+
+                pstmt.executeUpdate();
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
+    }
 
     // get ALL patients
     public static List<Patient> getAll(){

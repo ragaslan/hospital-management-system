@@ -97,7 +97,7 @@
               <text value="Ad *"/>
             </properties>
           </component>
-          <component id="d9afe" class="javax.swing.JTextField" binding="textId">
+          <component id="d9afe" class="javax.swing.JTextField" binding="textTc">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>

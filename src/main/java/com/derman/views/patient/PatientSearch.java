@@ -21,7 +21,7 @@ public class PatientSearch {
 
     public PatientSearch() {
 
-        //Çalışıyor mu emin değilim
+        //Tam olarak çalışmıyor. Hasta aranan ekranlarda değişiklik yapılacak
         hastayıBulButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -29,7 +29,6 @@ public class PatientSearch {
                     AlertBox.ShowError(patientSearchPanel,"Hasta TC kimlik numarası boş bırakılamaz");
                 }else{
                     patient = getPatientbyTC(textField1.getText());
-                    Main.data = patient;
                     if(patient != null){
                         AlertBox.ShowError(patientSearchPanel,"Hasta kaydı bulundu!");
 

@@ -27,6 +27,9 @@ public class  Main {
 
     public static Stack<String> visitedPages = new Stack<>();
 
+    public static String cameFrom = null;
+
+
     public static Object data = null;
 
     public static CardLayout cardLayout;

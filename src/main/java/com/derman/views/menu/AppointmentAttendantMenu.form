@@ -44,7 +44,7 @@
           </component>
         </children>
       </grid>
-      <grid id="c3bc2" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="30">
+      <grid id="c3bc2" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="30">
         <margin top="30" left="30" bottom="30" right="30"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -55,7 +55,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="eeaad" class="javax.swing.JButton" binding="randevuKaydıGörüntülemeButton" default-binding="true">
+          <component id="eeaad" class="javax.swing.JButton" binding="searchAppointmentRecordButton">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -65,7 +65,7 @@
               <text value="Randevu Kaydı Görüntüleme"/>
             </properties>
           </component>
-          <component id="afa4d" class="javax.swing.JButton" binding="randevuMüsaitlikGörüntülemeButton" default-binding="true">
+          <component id="afa4d" class="javax.swing.JButton" binding="seeAppointmentCalenderButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -73,16 +73,6 @@
             </constraints>
             <properties>
               <text value="Randevu Müsaitlik Görüntüleme"/>
-            </properties>
-          </component>
-          <component id="41fb3" class="javax.swing.JButton" binding="randevuKaydıOluşturmaButton" default-binding="true">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                <minimum-size width="-1" height="40"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value="Randevu Kaydı Oluşturma"/>
             </properties>
           </component>
         </children>

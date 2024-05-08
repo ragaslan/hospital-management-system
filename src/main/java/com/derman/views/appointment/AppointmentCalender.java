@@ -1,6 +1,10 @@
 package com.derman.views.appointment;
 
+import com.derman.Main;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AppointmentCalender {
     private JButton profilButton;
@@ -12,6 +16,16 @@ public class AppointmentCalender {
     private JButton randevuOluşturButton;
     private JList list5;
     private JPanel appointmentCalenderPanel;
+
+    public AppointmentCalender() {
+        geriButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Main.visitedPages.pop();
+                Main.changeScreen(Main.visitedPages.lastElement());
+            }
+        });
+    }
 
     public JPanel getAppointmentCalenderPanel() {
         return appointmentCalenderPanel;

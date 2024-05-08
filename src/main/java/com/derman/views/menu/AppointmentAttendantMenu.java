@@ -9,13 +9,29 @@ import java.awt.event.*;
 public class AppointmentAttendantMenu {
 
     private JButton profileButton;
-    private JButton randevuKaydıGörüntülemeButton;
-    private JButton randevuMüsaitlikGörüntülemeButton;
-    private JButton randevuKaydıOluşturmaButton;
+    private JButton searchAppointmentRecordButton;
+    private JButton seeAppointmentCalenderButton;
     private JPanel AppointmentAttendantPanel;
     private Account currentAccount;
 
     public AppointmentAttendantMenu() {
+
+        seeAppointmentCalenderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Main.changeScreen("RandevuEkrani");
+            }
+        });
+
+        searchAppointmentRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Main.visitedPages.push("RandevuKayitGoster");
+                Main.changeScreen("HastaAra");
+            }
+        });
+
+
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,6 +52,10 @@ public class AppointmentAttendantMenu {
             }
         };
         AppointmentAttendantPanel.addComponentListener(componentListener);
+        AppointmentAttendantPanel.addComponentListener(new ComponentAdapter() {
+        });
+
+
     }
 
     public JPanel getAppointmentAttendantPanel() {

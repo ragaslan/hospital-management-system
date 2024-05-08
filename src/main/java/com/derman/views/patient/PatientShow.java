@@ -87,8 +87,19 @@ public class PatientShow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Önceki sayfaya gitme
+                System.out.println(31);
                 Main.visitedPages.pop();
                 Main.changeScreen(Main.visitedPages.lastElement());
+            }
+        });
+
+        profilButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //data'daki kullanıcıyı sil
+                Main.data = null;
+                Main.visitedPages.pop();
+                Main.changeScreen("Giris");
             }
         });
 

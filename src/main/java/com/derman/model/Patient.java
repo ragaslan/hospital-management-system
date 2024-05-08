@@ -23,6 +23,8 @@ public class Patient {
         this.diseases = diseases;
     }
 
+    public Patient() {  };
+
     public int getId() {
         return id;
     }

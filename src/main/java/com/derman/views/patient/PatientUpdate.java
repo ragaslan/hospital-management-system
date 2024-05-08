@@ -111,6 +111,16 @@ public class PatientUpdate {
                 Main.changeScreen(Main.visitedPages.lastElement());
             }
         });
+
+        profilButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //data'daki kullanıcıyı sil
+                Main.data = null;
+                Main.visitedPages.pop();
+                Main.changeScreen("Giris");
+            }
+        });
     }
 
     public JPanel getPatientUpdatePanel() {

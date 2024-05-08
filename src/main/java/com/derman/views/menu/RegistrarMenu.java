@@ -11,9 +11,17 @@ public class RegistrarMenu {
     private JButton hastaKaydıGörüntülemeButton;
     private JButton randevuKaydıGörüntülemeButton;
     private JPanel registrarMenuPanel;
+    private JButton registerPatientButton;
     private Account currentAccount;
 
     public RegistrarMenu() {
+
+        registerPatientButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("HastaOlustur");
+            }
+        });
 
         hastaKaydıGörüntülemeButton.addActionListener(new ActionListener() {
             @Override

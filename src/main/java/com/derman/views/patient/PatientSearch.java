@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import static com.derman.controller.PatientController.getPatientbyTC;
 
 public class PatientSearch {
-    private JButton profilButton;
     private JButton geriButton;
     private JTextField textField1;
     private JButton hastayıBulButton;
@@ -31,9 +30,14 @@ public class PatientSearch {
                     patient = getPatientbyTC(textField1.getText());
                     if(patient != null){
                         AlertBox.ShowError(patientSearchPanel,"Hasta kaydı bulundu!");
-
-                        //Önceki sayfaya gitme
+                        Main.patientSearchData = patient;
                         Main.visitedPages.pop();
+                        if(!Main.afterPatientSearch.isEmpty()){
+                            String goTo = Main.afterPatientSearch;
+                            Main.afterPatientSearch = "";
+                            Main.changeScreen(goTo);
+                            return;
+                        }
                         lastPage = Main.visitedPages.lastElement();
                         Main.changeScreen(lastPage);
                     }else {
@@ -48,9 +52,7 @@ public class PatientSearch {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Önceki sayfaya gitme
-                Main.visitedPages.pop();
-                lastPage = Main.visitedPages.lastElement();
-                Main.changeScreen(lastPage);
+                Main.goBack();
             }
         });
     }

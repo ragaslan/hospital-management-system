@@ -9,19 +9,36 @@ import java.awt.event.*;
 public class AppointmentAttendantMenu {
 
     private JButton profileButton;
-    private JButton randevuKaydıGörüntülemeButton;
-    private JButton randevuMüsaitlikGörüntülemeButton;
-    private JButton randevuKaydıOluşturmaButton;
+    private JButton searchAppointmentRecordButton;
+    private JButton seeAppointmentCalenderButton;
     private JPanel AppointmentAttendantPanel;
     private Account currentAccount;
 
     public AppointmentAttendantMenu() {
+
+        seeAppointmentCalenderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                Main.changeScreen("RandevuEkrani");
+            }
+        });
+
+        searchAppointmentRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //Main.visitedPages.push("RandevuKayitGoster");
+                Main.afterPatientSearch = "RandevuKayitGoster";
+                Main.changeScreen("HastaAra");
+            }
+        });
+
+
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //data'daki kullanıcıyı sil
                 Main.data = null;
-                Main.visitedPages.pop();
+                Main.visitedPages.clear();
                 Main.changeScreen("Giris");
             }
         });
@@ -31,11 +48,15 @@ public class AppointmentAttendantMenu {
             @Override
             public void componentShown(ComponentEvent e) {
                 super.componentShown(e);
-                currentAccount = (Account) Main.data;
+                currentAccount = (Account)Main.data;
                 profileButton.setText(currentAccount.getUsername() + " : Çıkış Yap");
             }
         };
         AppointmentAttendantPanel.addComponentListener(componentListener);
+        AppointmentAttendantPanel.addComponentListener(new ComponentAdapter() {
+        });
+
+
     }
 
     public JPanel getAppointmentAttendantPanel() {

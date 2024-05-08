@@ -39,6 +39,13 @@ public class DoctorMenu {
             }
         });
 
+        tedaviKaydıOluşturmaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("TedaviOlustur");
+            }
+        });
+
         //Compenent görünür olduğunda trigger'lanır
         ComponentListener componentListener = new ComponentAdapter() {
             @Override

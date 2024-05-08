@@ -31,6 +31,7 @@ create table account (
 create table treatment(
    id serial primary key,
    doctor_id int references account(id),
+   patient_id int references patient(id),
    complaint text,
    tests text,
    diagnosis text,

@@ -7,15 +7,23 @@ public class Treatment {
     private String tests;
     private String diagnosis;
     private String prescriptions;
+    private Patient patient;
 
-    public Treatment(int id, Doctor doctor, String complaint, String tests, String diagnosis, String prescriptions) {
+    public Treatment() {}
+
+    public Treatment(int id, Doctor doctor,Patient patient, String complaint, String tests, String diagnosis, String prescriptions) {
         this.id = id;
         this.doctor = doctor;
+        this.patient = patient;
         this.complaint = complaint;
         this.tests = tests;
         this.diagnosis = diagnosis;
         this.prescriptions = prescriptions;
     }
+
+    public Patient getPatient() {return patient;}
+
+    public void setPatient(Patient patient) {this.patient = patient;}
 
     public int getId() {
         return id;

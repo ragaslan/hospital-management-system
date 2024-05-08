@@ -26,7 +26,8 @@ public class AppointmentAttendantMenu {
         searchAppointmentRecordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Main.visitedPages.push("RandevuKayitGoster");
+                //Main.visitedPages.push("RandevuKayitGoster");
+                Main.afterPatientSearch = "RandevuKayitGoster";
                 Main.changeScreen("HastaAra");
             }
         });
@@ -37,7 +38,7 @@ public class AppointmentAttendantMenu {
             public void actionPerformed(ActionEvent e) {
                 //data'daki kullanıcıyı sil
                 Main.data = null;
-                Main.visitedPages.pop();
+                Main.visitedPages.clear();
                 Main.changeScreen("Giris");
             }
         });
@@ -47,7 +48,7 @@ public class AppointmentAttendantMenu {
             @Override
             public void componentShown(ComponentEvent e) {
                 super.componentShown(e);
-                currentAccount = (Account) Main.data;
+                currentAccount = (Account)Main.data;
                 profileButton.setText(currentAccount.getUsername() + " : Çıkış Yap");
             }
         };

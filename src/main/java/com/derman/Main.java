@@ -1,5 +1,6 @@
 package com.derman;
 
+import com.derman.model.Patient;
 import com.derman.views.Login;
 import com.derman.views.appointment.AppointmentCalender;
 import com.derman.views.appointment.AppointmentRecordShow;
@@ -17,6 +18,7 @@ import com.derman.views.treatment.TreatmentRecordShow;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Stack;
 
 
@@ -27,19 +29,28 @@ public class  Main {
 
     public static Stack<String> visitedPages = new Stack<>();
 
-    public static String cameFrom = null;
-
-
     public static Object data = null;
+
+
+    public static String afterPatientSearch = "";
+    public static Patient patientSearchData = null;
 
     public static CardLayout cardLayout;
 
     public static JPanel cardPanel;
 
+    public static void goBack(){
+        Main.visitedPages.pop();
+        String lastPage = Main.visitedPages.pop();
+        Main.changeScreen(lastPage);
+    }
+
     public static void changeScreen(String screenName){
         visitedPages.push(screenName);
         cardLayout.show(cardPanel,screenName);
     }
+
+
 
 
     public static void main(String[] args) {

@@ -31,8 +31,8 @@ public class PatientSearch {
                     patient = getPatientbyTC(textField1.getText());
                     if(patient != null){
                         AlertBox.ShowError(patientSearchPanel,"Hasta kaydı bulundu!");
-
                         //Önceki sayfaya gitme
+                        Main.data = patient;
                         Main.visitedPages.pop();
                         lastPage = Main.visitedPages.lastElement();
                         Main.changeScreen(lastPage);

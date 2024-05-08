@@ -62,8 +62,28 @@ public class PatientController {
         }
     }
 
+    public static List<String> getAllTcNumbers(){
+        List<String> TcList = new ArrayList<String>();
+
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String selectSql = "select tc from patient";
+                PreparedStatement stmt = connection.prepareStatement(selectSql);
+                ResultSet resultSet = stmt.executeQuery();
+                while(resultSet.next()){
+                    TcList.add( resultSet.getString("tc"));
+                }
+                return TcList;
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return null;
+    }
+
     // get ALL patients
-    public static List<Patient> getAll(){
+    public static List<Patient> getAllPatients(){
         List<Patient> patientList = new ArrayList<Patient>();
 
         try(var connection = Db.connect()){

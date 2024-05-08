@@ -9,6 +9,7 @@ public class TreatmentRecordShow {
     private JTextField textField3;
     private JButton sigortaBilgisiSorgulaButton;
     private JPanel treatmentRecordShowPanel;
+    private JSpinner spinner1;
 
     public JPanel getTreatmentRecordShowPanel() {
         return treatmentRecordShowPanel;

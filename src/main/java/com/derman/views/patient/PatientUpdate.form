@@ -3,13 +3,13 @@
   <grid id="27dc6" binding="patientUpdatePanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="904" height="593"/>
+      <xy x="20" y="20" width="904" height="657"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="ed816" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="20" left="20" bottom="20" right="20"/>
+      <grid id="ed816" layout-manager="GridLayoutManager" row-count="2" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="20" bottom="0" right="20"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="1" indent="0" use-parent-layout="false">
             <minimum-size width="900" height="-1"/>
@@ -21,7 +21,7 @@
         <children>
           <component id="7343e" class="javax.swing.JButton" binding="profilButton" default-binding="true">
             <constraints>
-              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+              <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="150" height="40"/>
               </grid>
             </constraints>
@@ -39,9 +39,28 @@
               <text value="Geri"/>
             </properties>
           </component>
+          <component id="23e8c" class="javax.swing.JLabel" binding="tc_label">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Hasta TC kimlik numarası:"/>
+            </properties>
+          </component>
+          <component id="2c15c" class="javax.swing.JTextField" binding="patientTc">
+            <constraints>
+              <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="30"/>
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value=""/>
+            </properties>
+          </component>
           <component id="744b8" class="javax.swing.JLabel">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Hasta Kaydı Güncelleme"/>
@@ -59,14 +78,16 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="da5d5" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="da5d5" class="javax.swing.JTextField" binding="textAd">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
           <component id="b263f" class="javax.swing.JLabel">
             <constraints>
@@ -76,7 +97,7 @@
               <text value="Ad *"/>
             </properties>
           </component>
-          <component id="d9afe" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="d9afe" class="javax.swing.JTextField" binding="textTc">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -93,7 +114,7 @@
               <text value="TC *"/>
             </properties>
           </component>
-          <component id="e5640" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+          <component id="e5640" class="javax.swing.JTextField" binding="textaddress">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -110,7 +131,7 @@
               <text value="Adres"/>
             </properties>
           </component>
-          <component id="3386f" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="3386f" class="javax.swing.JTextField" binding="textKnownI">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -127,16 +148,18 @@
               <text value="Bilinen Hastalıklar"/>
             </properties>
           </component>
-          <component id="189d" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+          <component id="189d" class="javax.swing.JTextField" binding="textSoyad">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
-          <component id="e6ab1" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+          <component id="e6ab1" class="javax.swing.JTextField" binding="textTelNo">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -145,7 +168,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="9a831" class="javax.swing.JTextField" binding="textField7" default-binding="true">
+          <component id="9a831" class="javax.swing.JTextField" binding="textBlood">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -154,7 +177,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="f607b" class="javax.swing.JTextField" binding="textField8" default-binding="true">
+          <component id="f607b" class="javax.swing.JTextField" binding="textAlergies">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>

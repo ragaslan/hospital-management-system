@@ -65,10 +65,11 @@ public class  Main {
         DoctorCreate doctorCreate = new DoctorCreate();
 
         // patient
+        PatientUpdate patientUpdate = new PatientUpdate();
         PatientCreate patientCreate = new PatientCreate();
         PatientSearch patientSearch = new PatientSearch();
         PatientShow patientShow = new PatientShow();
-        PatientUpdate patientUpdate = new PatientUpdate();
+
 
         // polyclinic
         PolyclinicCreate polyclinicCreate = new PolyclinicCreate();
@@ -102,10 +103,11 @@ public class  Main {
         cardPanel.add(doctorCreate.getDoctorCreatePanel(),"DoktorOlustur");
 
         // patient
+        cardPanel.add(patientUpdate.getPatientUpdatePanel(),"HastaGuncelle");
         cardPanel.add(patientCreate.getPatientCreatePanel(),"HastaOlustur");
         cardPanel.add(patientSearch.getPatientSearchPanel(),"HastaAra");
         cardPanel.add(patientShow.getPatientShowPanel(),"HastaGoster");
-        cardPanel.add(patientUpdate.getPatientUpdatePanel(),"HastaGuncelle");
+
 
         // polyclinic
         cardPanel.add(polyclinicCreate.getPolyclinicCreatePanel(),"PoliklinikOlustur");
@@ -118,8 +120,7 @@ public class  Main {
         frame.pack();
         frame.setVisible(true);
 
-        cardLayout.show(cardPanel,"Login");
-
+        cardLayout.show(cardPanel,"Giriş");
     }
 
 }

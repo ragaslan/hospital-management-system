@@ -9,6 +9,8 @@ public class Treatment {
     private String prescriptions;
     private Patient patient;
 
+    public Treatment() {}
+
     public Treatment(int id, Doctor doctor,Patient patient, String complaint, String tests, String diagnosis, String prescriptions) {
         this.id = id;
         this.doctor = doctor;
@@ -18,6 +20,10 @@ public class Treatment {
         this.diagnosis = diagnosis;
         this.prescriptions = prescriptions;
     }
+
+    public Patient getPatient() {return patient;}
+
+    public void setPatient(Patient patient) {this.patient = patient;}
 
     public int getId() {
         return id;

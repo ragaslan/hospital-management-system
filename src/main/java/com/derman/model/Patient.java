@@ -10,8 +10,10 @@ public class Patient {
     private String blood;
     private String alergies;
     private String diseases;
+    private String insurance;
 
-    public Patient(int id, String tc, String name, String surname, String phone, String address, String blood, String alergies, String diseases) {
+
+    public Patient(int id, String tc, String name, String surname, String phone, String address, String blood, String alergies, String diseases,String insurance) {
         this.id = id;
         this.tc = tc;
         this.name = name;
@@ -21,6 +23,7 @@ public class Patient {
         this.blood = blood;
         this.alergies = alergies;
         this.diseases = diseases;
+        this.insurance = insurance;
     }
 
     public int getId() {
@@ -93,5 +96,13 @@ public class Patient {
 
     public void setDiseases(String diseases) {
         this.diseases = diseases;
+    }
+
+    public String getInsurance() {
+        return insurance;
+    }
+
+    public void setInsurance(String insurance) {
+        this.insurance = insurance;
     }
 }

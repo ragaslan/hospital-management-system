@@ -8,11 +8,20 @@ import java.awt.event.*;
 
 public class CashierMenu {
     private JButton profileButton;
-    private JButton tedaviKaydıGörüntüleButton;
+    private JButton showTreatmentRecordButton;
     private JPanel cashierMenuPanel;
     private Account currentAccount;
 
     public CashierMenu() {
+
+        showTreatmentRecordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.afterPatientSearch = "TedaviKaydiGoster";
+                Main.changeScreen("HastaAra");
+            }
+        });
+
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,6 +42,11 @@ public class CashierMenu {
             }
         };
         cashierMenuPanel.addComponentListener(componentListener);
+
+
+
+
+
     }
 
     public JPanel getCashierMenuPanel() {

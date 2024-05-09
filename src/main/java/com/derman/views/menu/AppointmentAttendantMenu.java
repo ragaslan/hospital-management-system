@@ -19,7 +19,8 @@ public class AppointmentAttendantMenu {
         seeAppointmentCalenderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                Main.changeScreen("RandevuEkrani");
+                Main.afterPatientSearch = "RandevuEkrani";
+                Main.changeScreen("HastaAra");
             }
         });
 

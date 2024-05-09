@@ -18,19 +18,16 @@ import com.derman.views.treatment.TreatmentRecordShow;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Stack;
 
 
 public class  Main {
-
 
     // burada stack tutmak gerekiyor
 
     public static Stack<String> visitedPages = new Stack<>();
 
     public static Object data = null;
-
 
     public static String afterPatientSearch = "";
     public static Patient patientSearchData = null;
@@ -44,7 +41,6 @@ public class  Main {
         String lastPage = Main.visitedPages.pop();
         Main.changeScreen(lastPage);
     }
-
     public static void changeScreen(String screenName){
         visitedPages.push(screenName);
         cardLayout.show(cardPanel,screenName);

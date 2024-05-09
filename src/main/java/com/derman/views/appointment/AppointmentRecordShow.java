@@ -66,15 +66,25 @@ public class AppointmentRecordShow {
                     timeField.setText("");
                     appointmentAlert.setText("Hastaya ait randevu bulunamadı !");
                 }else{
-                    //polyclinicField.setText();
                     Appointment appointment = AppointmentController.findAppointmentByPatientId(Main.patientSearchData.getId());
-                    polyclinicField.setText(appointment.getPolyclinic().getName());
-                    doctorField.setText(appointment.getDoctor().getName() + " " + appointment.getDoctor().getSurname());
-                    String dateValue =  " " + appointment.getDay() + " / " +  appointment.getMonth() + " / " + 2024;
-                    dateField.setText(dateValue);
-                    String timeValue = appointment.getHour() + " : " + appointment.getMinute();
-                    timeField.setText(timeValue);
-                    appointmentAlert.setText("");
+                    if(appointment == null){
+                        appointmentAlert.setText("Hastaya ait randevu bulunamadı !");
+                    }else{
+                        polyclinicField.setText(appointment.getPolyclinic().getName());
+                        doctorField.setText(appointment.getDoctor().getName().toUpperCase() + " " + appointment.getDoctor().getSurname().toUpperCase());
+                        String dateValue =  " " + appointment.getDay() + " / " +  appointment.getMonth() + " / " + 2024;
+                        dateField.setText(dateValue);
+                        String strValue;
+                        if(appointment.getMinute() == 0){
+                            strValue = "00";
+                        }else{
+                            strValue = "30";
+                        }
+                        String timeValue = appointment.getHour() + " : " + strValue;
+                        timeField.setText(timeValue);
+                        appointmentAlert.setText("");
+                    }
+
                 }
             }
 
@@ -84,15 +94,4 @@ public class AppointmentRecordShow {
             }
         });
     }
-
-    /*
-    public AppointmentRecordShow(){
-        if(Main.data == null){
-            AlertBox.ShowError(appointmentRecordShowPanel,"Hasta bilgisi çekilemedi !");
-        }else{
-            // find appointment with patient id
-            System.out.println(Main.data);
-        }
-    }
-    */
 }

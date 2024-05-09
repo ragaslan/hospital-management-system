@@ -10,6 +10,9 @@ public class PolyclinicCreate {
     private JComboBox comboBox1;
     private JPanel polyclinicCreatePanel;
 
+
+    //TODO polikilinik oluşturma(alperen yapacak)
+
     public JPanel getPolyclinicCreatePanel() {
         return polyclinicCreatePanel;
     }

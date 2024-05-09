@@ -31,8 +31,8 @@ public class  Main {
 
     public static Object data = null;
 
-
     public static String afterPatientSearch = "";
+
     public static Patient patientSearchData = null;
 
     public static CardLayout cardLayout;
@@ -49,9 +49,6 @@ public class  Main {
         visitedPages.push(screenName);
         cardLayout.show(cardPanel,screenName);
     }
-
-
-
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();

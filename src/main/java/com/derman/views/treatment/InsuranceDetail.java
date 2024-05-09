@@ -10,6 +10,9 @@ public class InsuranceDetail {
     private JButton ödemeyiTamamlaButton;
     private JPanel insuranceDetailPanel;
 
+
+    //TODO ödemeden önceki son nokta. Databasede değişiklik gerekebilir. (emir yapacak)
+
     public JPanel getInsuranceDetailPanel() {
         return insuranceDetailPanel;
     }

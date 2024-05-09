@@ -12,6 +12,9 @@ public class DoctorCreate {
     private JButton kaydetButton;
     private JPanel doctorCreatePanel;
 
+
+    //TODO doktor oluşturma (alperen yapacak)
+
     public JPanel getDoctorCreatePanel() {
         return doctorCreatePanel;
     }

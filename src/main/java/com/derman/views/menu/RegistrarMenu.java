@@ -30,6 +30,13 @@ public class RegistrarMenu {
             }
         });
 
+        randevuKaydıGörüntülemeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("RandevuKayitGoster");
+            }
+        });
+
         profileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

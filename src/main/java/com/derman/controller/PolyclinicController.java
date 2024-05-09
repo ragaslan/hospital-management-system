@@ -34,7 +34,8 @@ public class PolyclinicController {
     }
 
     public static List<Polyclinic> getAllPolyclinics(){
-        List<Polyclinic> allPol = new ArrayList<>();
+        List<Polyclinic> polyclinicList = new ArrayList<>();
+        int i = 0;
         try(var connection = Db.connect()){
             if (connection != null){
                 String selectSql = "select * from polyclinic";
@@ -45,9 +46,9 @@ public class PolyclinicController {
                             resultSet.getInt("id"),
                             resultSet.getString("name")
                     );
-                    allPol.add(polyclinic);
+                    polyclinicList.add(polyclinic);
                 }
-                return allPol;
+                return polyclinicList;
             }
         }catch (SQLException e){
             System.err.println(e.getMessage());

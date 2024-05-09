@@ -83,101 +83,47 @@
               <text value="Gün"/>
             </properties>
           </component>
-          <component id="c299c" class="javax.swing.JList" binding="list1" default-binding="true">
+          <component id="c299c" class="javax.swing.JList" binding="polyclinicList">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <model>
-                <item value="Göz"/>
-                <item value="Kulak"/>
-              </model>
+              <model/>
             </properties>
           </component>
-          <component id="7b700" class="javax.swing.JList" binding="list2" default-binding="true">
+          <component id="7b700" class="javax.swing.JList" binding="monthList">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <model>
-                <item value="Ocak"/>
-                <item value="Şubat"/>
-                <item value="Mart"/>
-                <item value="Nisan"/>
-                <item value="Mayıs"/>
-                <item value="Haziran"/>
-                <item value="Temmuz"/>
-                <item value="Ağustos"/>
-                <item value="Eylül"/>
-                <item value="Ekim"/>
-                <item value="Kasım"/>
-                <item value="Aralık"/>
-              </model>
+              <model/>
             </properties>
           </component>
-          <component id="d51a" class="javax.swing.JList" binding="list3" default-binding="true">
+          <component id="d51a" class="javax.swing.JList" binding="dayList">
             <constraints>
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <model>
-                <item value="1"/>
-                <item value="2"/>
-                <item value="3"/>
-                <item value="4"/>
-                <item value="5"/>
-                <item value="6"/>
-                <item value="7"/>
-                <item value="8"/>
-                <item value="9"/>
-                <item value="10"/>
-                <item value="11"/>
-                <item value="12"/>
-                <item value="13"/>
-                <item value="14"/>
-                <item value="15"/>
-                <item value="16"/>
-                <item value="17"/>
-                <item value="18"/>
-                <item value="19"/>
-                <item value="20"/>
-                <item value="21"/>
-                <item value="22"/>
-                <item value="23"/>
-                <item value="24"/>
-                <item value="25"/>
-                <item value="26"/>
-                <item value="27"/>
-                <item value="28"/>
-                <item value="29"/>
-                <item value="30"/>
-                <item value="31"/>
-              </model>
+              <model/>
             </properties>
           </component>
-          <component id="31af9" class="javax.swing.JList" binding="list4" default-binding="true">
+          <component id="31af9" class="javax.swing.JList" binding="hoursList">
             <constraints>
               <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <model>
-                <item value="10:00-10:30"/>
-                <item value="10:30-11:00"/>
-                <item value="11:00-11:30"/>
-                <item value="11:30-12:00"/>
-                <item value="13:00-13:30"/>
-              </model>
+              <model/>
             </properties>
           </component>
-          <component id="69c81" class="javax.swing.JButton" binding="randevuOluşturButton" default-binding="true">
+          <component id="69c81" class="javax.swing.JButton" binding="createAppointmentButton">
             <constraints>
               <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -195,20 +141,14 @@
               <text value="Doktor"/>
             </properties>
           </component>
-          <component id="fbc68" class="javax.swing.JList" binding="list5" default-binding="true">
+          <component id="fbc68" class="javax.swing.JList" binding="doctorList">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <model>
-                <item value="Dr Ali"/>
-                <item value="Dr Mehmet"/>
-                <item value="Dr Ayşe"/>
-                <item value="Dr Osman"/>
-                <item value="Dr Canan"/>
-              </model>
+              <model/>
             </properties>
           </component>
         </children>

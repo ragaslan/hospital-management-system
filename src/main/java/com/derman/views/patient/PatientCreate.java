@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PatientCreate {
-    private JButton profilButton;
     private JButton geriButton;
     private JTextField textEditName;
     private JTextField textEditTc;
@@ -52,21 +51,10 @@ public class PatientCreate {
         });
 
 
-        profilButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //data'daki kullanıcıyı sil
-                Main.data = null;
-                Main.visitedPages.pop();
-                Main.changeScreen("Giris");
-            }
-        });
-
         geriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.visitedPages.pop();
-                Main.changeScreen(Main.visitedPages.lastElement());
+                Main.goBack();
             }
         });
     }

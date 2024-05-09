@@ -16,25 +16,6 @@ public class TreatmentRecordShow {
     private JButton sigortaBilgisiSorgulaButton;
     private JPanel treatmentRecordShowPanel;
 
-
-
-    //TODO tedavi görüntüleme (emir yapacak yani ben)
-
-    public TreatmentRecordShow() {
-
-        ComponentListener componentListener = new ComponentAdapter() {
-            public void componentShown(ComponentEvent e) {
-                Main.afterPatientSearch = "TedaviKaydiGoster";
-                if (Main.patientSearchData == null)
-                    Main.changeScreen("HastaAra");
-            }
-        };
-        treatmentRecordShowPanel.addComponentListener(componentListener);
-
-
-    }
-
-
     public JPanel getTreatmentRecordShowPanel() {
         return treatmentRecordShowPanel;
     }

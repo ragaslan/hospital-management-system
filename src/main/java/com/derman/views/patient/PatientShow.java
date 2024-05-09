@@ -7,13 +7,11 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import static com.derman.controller.PatientController.getPatientbyTC;
 
 public class PatientShow {
-    private JButton profilButton;
     private JButton geriButton;
     private JTextField textEditName;
     private JTextField textEditTc;
@@ -24,15 +22,16 @@ public class PatientShow {
     private JTextField textEditBloodGroup;
     private JTextField textEditAllergies;
     private JPanel patientShowPanel;
-    private JTextField PatientTc;
     private Patient patient;
 
     public PatientShow() {
 
-        DocumentListener textListener = new DocumentListener() {
+
+        ComponentListener componentListener = new ComponentAdapter() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
-                patient = getPatientbyTC(PatientTc.getText());
+            public void componentShown(ComponentEvent e) {
+                patient = Main.patientSearchData;
+
                 if(patient != null){
                     textEditName.setText(patient.getName());
                     textEditSurname.setText(patient.getSurname());
@@ -53,55 +52,19 @@ public class PatientShow {
                     textEditKnownIllness.setText("");
                 }
             }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                patient = getPatientbyTC(PatientTc.getText());
-                if(patient != null){
-                    textEditName.setText(patient.getName());
-                    textEditSurname.setText(patient.getSurname());
-                    textEditTc.setText(patient.getTc());
-                    textEditPhoneNo.setText(patient.getPhone());
-                    textEditAdrress.setText(patient.getAddress());
-                    textEditBloodGroup.setText(patient.getBlood());
-                    textEditAllergies.setText(patient.getAlergies());
-                    textEditKnownIllness.setText(patient.getDiseases());
-                }else{
-                    textEditName.setText("");
-                    textEditSurname.setText("");
-                    textEditTc.setText("");
-                    textEditPhoneNo.setText("");
-                    textEditAdrress.setText("");
-                    textEditBloodGroup.setText("");
-                    textEditAllergies.setText("");
-                    textEditKnownIllness.setText("");
-                }
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) { }
         };
-        PatientTc.getDocument().addDocumentListener(textListener);
+        patientShowPanel.addComponentListener(componentListener);
+
 
         geriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Önceki sayfaya gitme
-                System.out.println(31);
-                Main.visitedPages.pop();
-                Main.changeScreen(Main.visitedPages.lastElement());
+                Main.goBack();
             }
         });
 
-        profilButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //data'daki kullanıcıyı sil
-                Main.data = null;
-                Main.visitedPages.pop();
-                Main.changeScreen("Giris");
-            }
-        });
+
 
     }
 

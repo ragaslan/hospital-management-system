@@ -55,7 +55,7 @@ public class AppointmentRecordShow {
 
             @Override
             public void componentShown(ComponentEvent componentEvent) {
-                System.out.println(Main.visitedPages.toString());
+                //System.out.println(Main.visitedPages.toString());
                 Patient patient = Main.patientSearchData;
                 // find appointment with patient id
                 if(Main.patientSearchData == null){

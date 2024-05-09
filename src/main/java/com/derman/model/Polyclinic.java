@@ -5,6 +5,8 @@ public class Polyclinic {
     private int id;
     private String name;
 
+    public Polyclinic() { }
+
     public Polyclinic(int id, String name) {
         this.id = id;
         this.name = name;

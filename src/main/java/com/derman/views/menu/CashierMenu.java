@@ -26,7 +26,8 @@ public class CashierMenu {
         tedaviKaydıGörüntüleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("TedaviKaydiGoster");
+                Main.afterPatientSearch = "TedaviKaydiGoster";
+                Main.changeScreen("HastaAra");
             }
         });
 

@@ -26,14 +26,16 @@ public class RegistrarMenu {
         hastaKaydıGörüntülemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("HastaGoster");
+                Main.afterPatientSearch = "HastaGoster";
+                Main.changeScreen("HastaAra");
             }
         });
 
         randevuKaydıGörüntülemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("RandevuKayitGoster");
+                Main.afterPatientSearch = "RandevuKayitGoster";
+                Main.changeScreen("HastaAra");
             }
         });
 

@@ -48,6 +48,28 @@ public class PolyclinicController {
         return null;
     }
 
+    public static Polyclinic getPolyclinicbyName(String polyclinicName){
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String selectSql = "select * from polyclinic where name = ?";
+                PreparedStatement stmt = connection.prepareStatement(selectSql);
+                stmt.setString(1,polyclinicName);
+                ResultSet resultSet = stmt.executeQuery();
+                if(resultSet.next()){
+                    Polyclinic polyclinic = new Polyclinic(
+                            resultSet.getInt("id"),
+                            resultSet.getString("name")
+                    );
+                    return polyclinic;
+                }
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return null;
+    }
+
     public static List<Polyclinic> getAllPolyclinics(){
         List<Polyclinic> polyclinicList = new ArrayList<>();
         int i = 0;

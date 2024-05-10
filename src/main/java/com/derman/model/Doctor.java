@@ -4,8 +4,8 @@ public class Doctor extends Account{
 
     private Polyclinic polyclinic;
 
-    public Doctor(int id, String username, String name, String surname, String password, String role,Polyclinic polyclinic) {
-        super(id, username, name, surname, password, role);
+    public Doctor(int id, String username, String name, String surname,String phone, String password, String role,Polyclinic polyclinic) {
+        super(id, username, name,phone,  surname, password, role);
         this.polyclinic = polyclinic;
     }
 

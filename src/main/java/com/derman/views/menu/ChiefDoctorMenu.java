@@ -44,6 +44,13 @@ public class ChiefDoctorMenu{
             }
         });
 
+        yeniDoktorKaydıButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("DoktorOlustur");
+            }
+        });
+
         yeniPoliklinikKaydıButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

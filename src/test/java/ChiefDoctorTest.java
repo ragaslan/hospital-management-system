@@ -1,17 +1,14 @@
-import com.derman.model.Doctor;
-import com.derman.model.Polyclinic;
+import com.derman.model.ChiefDoctor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+public class ChiefDoctorTest{
 
-public class DoctorTest {
-
-    private Doctor doctor;
+    private ChiefDoctor doctor;
 
     @BeforeEach
     void beforeEachTest(){
-        Polyclinic polyclinic = new Polyclinic(10,"Göz Hastalıkları");
-        doctor = new Doctor(12,"doctor1","ahmet","can","05551233445","123456","doktor",polyclinic);
+        doctor = new ChiefDoctor(12,"doctor1","ahmet","can","05551233445","123456","bashekim");
     }
 
     @Test
@@ -46,13 +43,6 @@ public class DoctorTest {
 
     @Test
     void testDoctorRole(){
-        Assertions.assertEquals("doktor",doctor.getRole());
+        Assertions.assertEquals("bashekim",doctor.getRole());
     }
-
-    @Test
-    void testDoctorPolyclinicName(){
-        Assertions.assertEquals("Göz Hastalıkları",doctor.getPolyclinic().getName());
-    }
-
-
 }

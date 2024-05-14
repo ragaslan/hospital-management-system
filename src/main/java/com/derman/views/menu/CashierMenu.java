@@ -32,6 +32,7 @@ public class CashierMenu {
             }
         });
 
+<<<<<<< emir
         showTreatmentRecordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,6 +40,8 @@ public class CashierMenu {
                 Main.changeScreen("HastaAra");
             }
         });
+=======
+>>>>>>> main
 
         //Compenent görünür olduğunda trigger'lanır
         ComponentListener componentListener = new ComponentAdapter() {

@@ -32,7 +32,7 @@ public class CashierMenu {
             }
         });
 
-        tedaviKaydıGörüntüleButton.addActionListener(new ActionListener() {
+        showTreatmentRecordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.afterPatientSearch = "TedaviKaydiGoster";

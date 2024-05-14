@@ -5,6 +5,7 @@ import com.derman.model.Patient;
 import com.derman.model.Treatment;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class TreatmentController {
@@ -28,4 +29,51 @@ public class TreatmentController {
             System.err.println(e.getMessage());
         }
     }
+
+    public static Treatment getTreatmentByPatientId(int id){
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String sql = "select * from treatment where patient_id = ?";
+                PreparedStatement pstmt = connection.prepareStatement(sql);
+                pstmt.setInt(1, id);
+                ResultSet result = pstmt.executeQuery();
+                //System.out.println(result);
+                if(result.next()){
+
+                    Treatment treatment = new Treatment(
+                            result.getInt("id"),
+                            null,
+                            null,
+                            null,
+                            result.getString("tests"),
+                            result.getString("diagnosis"),
+                            null
+                            );
+                    return treatment;
+                }else{
+                    return null;
+                }
+            }
+            return null;
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static boolean deleteTreatment(int id){
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String sql = "delete from treatment where patient_id = ?";
+                PreparedStatement pstmt = connection.prepareStatement(sql);
+                pstmt.setInt(1,id);
+                return pstmt.executeUpdate() == 1;
+            }
+            return false;
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
 }

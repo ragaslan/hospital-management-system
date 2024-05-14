@@ -50,7 +50,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7a4dd" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="7a4dd" class="javax.swing.JTextField" binding="insuranceField">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -69,7 +69,7 @@
               <text value="Sigorta"/>
             </properties>
           </component>
-          <component id="74aae" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+          <component id="74aae" class="javax.swing.JTextField" binding="priceField">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>
@@ -88,7 +88,7 @@
               <text value="Sigorta Kesintisinden Sonraki Ücret"/>
             </properties>
           </component>
-          <component id="249e5" class="javax.swing.JButton" binding="ödemeyiTamamlaButton" default-binding="true">
+          <component id="249e5" class="javax.swing.JButton" binding="getPaymentButton">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                 <minimum-size width="-1" height="40"/>

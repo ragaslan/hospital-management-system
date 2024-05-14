@@ -29,7 +29,8 @@ public class PatientController {
                             resultSet.getString("address"),
                             resultSet.getString("blood"),
                             resultSet.getString("alergies"),
-                            resultSet.getString("diseases")
+                            resultSet.getString("diseases"),
+                            resultSet.getString("insurance")
                     );
                     return patient;
                 }
@@ -58,7 +59,8 @@ public class PatientController {
                             resultSet.getString("address"),
                             resultSet.getString("blood"),
                             resultSet.getString("alergies"),
-                            resultSet.getString("diseases")
+                            resultSet.getString("diseases"),
+                            resultSet.getString("insurance")
                     );
 
                     return patient;
@@ -133,7 +135,8 @@ public class PatientController {
                             resultSet.getString("address"),
                             resultSet.getString("blood"),
                             resultSet.getString("alergies"),
-                            resultSet.getString("diseases")
+                            resultSet.getString("diseases"),
+                            resultSet.getString("insurance")
                     ));
                 }
                 return patientList;

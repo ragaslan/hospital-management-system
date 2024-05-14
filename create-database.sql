@@ -7,7 +7,8 @@ create table patient(
     address text,
     blood varchar(10),
     alergies text,
-    diseases text
+    diseases text,
+    insurance varchar(50)
 );
 
 create table polyclinic (

@@ -26,6 +26,8 @@ public class Patient {
         this.insurance = insurance;
     }
 
+    public Patient() {  };
+
     public int getId() {
         return id;
     }

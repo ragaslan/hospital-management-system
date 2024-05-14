@@ -26,6 +26,7 @@ public class AccountController {
                                 resultSet.getInt("id"),
                                 resultSet.getString("username"),
                                 resultSet.getString("name"),
+                                resultSet.getString("phone"),
                                 resultSet.getString("surname"),
                                 resultSet.getString("password"),
                                 resultSet.getString("role")
@@ -53,6 +54,7 @@ public class AccountController {
                             resultSet.getString("username"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
+                            resultSet.getString("phone"),
                             resultSet.getString("password"),
                             resultSet.getString("role")
                     );
@@ -81,6 +83,7 @@ public class AccountController {
                             resultSet.getString("username"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
+                            resultSet.getString("phone"),
                             resultSet.getString("password"),
                             resultSet.getString("role")
                     ));

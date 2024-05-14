@@ -2,6 +2,8 @@ package com.derman.controller;
 import com.derman.database.Db;
 import com.derman.model.Doctor;
 import com.derman.model.Patient;
+import com.derman.model.Treatment;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -144,5 +146,25 @@ public class PatientController {
             return null;
         }
         return null;
+    }
+
+    public static void createPatient(Patient patient){
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String sql = "insert into patient (name,surname,tc,address,phone,blood) values(?,?,?,?,?,?)";
+                PreparedStatement pstmt = connection.prepareStatement(sql);
+                pstmt.setString(1, patient.getName());
+                pstmt.setString(2, patient.getSurname());
+                pstmt.setString(3, patient.getTc());
+                pstmt.setString(4, patient.getAddress());
+                pstmt.setString(5, patient.getPhone());
+                pstmt.setString(6, patient.getBlood());
+
+                pstmt.executeUpdate();
+
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.derman.views.treatment;
 
 import com.derman.Main;
+
 import com.derman.controller.TreatmentController;
 import com.derman.model.Patient;
 import com.derman.model.Treatment;
@@ -18,6 +19,7 @@ public class TreatmentRecordShow {
     private JTextField testField;
     private JButton insuranceDetailButton;
     private JPanel treatmentRecordShowPanel;
+
 
     public TreatmentRecordShow(){
         insuranceDetailButton.addActionListener(new ActionListener() {

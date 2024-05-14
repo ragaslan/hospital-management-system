@@ -18,6 +18,7 @@ public class InsuranceDetail {
     private JButton getPaymentButton;
     private JPanel insuranceDetailPanel;
 
+
     public JPanel getInsuranceDetailPanel() {
         return insuranceDetailPanel;
     }

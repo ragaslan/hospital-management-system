@@ -9,15 +9,17 @@ public class Account {
     private String surname;
     private String password;
     private String role;
+    private String phone;
 
     // constructor
-    public Account(int id,String username, String name, String surname, String password, String role) {
+    public Account(int id,String username, String name, String surname,String phone, String password, String role) {
         this.id = id;
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.password = password;
         this.role = role;
+        this.phone = phone;
     }
 
     public int getId() {
@@ -68,9 +70,15 @@ public class Account {
         this.role = role;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     // toString
-
-
     @Override
     public String toString() {
         return "Account{" +
@@ -81,4 +89,6 @@ public class Account {
                 ", role='" + role + '\'' +
                 '}';
     }
+
+
 }

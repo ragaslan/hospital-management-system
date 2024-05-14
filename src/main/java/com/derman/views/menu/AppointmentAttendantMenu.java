@@ -54,9 +54,6 @@ public class AppointmentAttendantMenu {
             }
         };
         AppointmentAttendantPanel.addComponentListener(componentListener);
-        AppointmentAttendantPanel.addComponentListener(new ComponentAdapter() {
-        });
-
 
     }
 

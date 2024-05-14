@@ -32,6 +32,14 @@ public class CashierMenu {
             }
         });
 
+        tedaviKaydıGörüntüleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.afterPatientSearch = "TedaviKaydiGoster";
+                Main.changeScreen("HastaAra");
+            }
+        });
+
         //Compenent görünür olduğunda trigger'lanır
         ComponentListener componentListener = new ComponentAdapter() {
             @Override

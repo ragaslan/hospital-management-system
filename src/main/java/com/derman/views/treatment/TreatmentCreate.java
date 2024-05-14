@@ -26,28 +26,13 @@ public class TreatmentCreate {
     private JButton hastaKaydınıGörüntüleButton;
     private JButton kaydetButton;
     private JPanel treatmentCreatePanel;
-    private JComboBox comboBox1;
     private Account account;
     private Doctor doctor;
     private Patient patient;
 
     public TreatmentCreate() {
-        List<String> TcList = new ArrayList<String>();
-        TcList = PatientController.getAllTcNumbers();
         Treatment treatment = new Treatment();
 
-        if (TcList != null) {
-            for (String tc : TcList) {
-                comboBox1.addItem(tc);
-            }
-        }
-        comboBox1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Get the selected item from the combo box
-                patient = PatientController.getPatientbyTC(comboBox1.getSelectedItem().toString());
-            }
-        });
 
         kaydetButton.addActionListener(new ActionListener() {
             @Override
@@ -56,16 +41,18 @@ public class TreatmentCreate {
                 treatment.setPrescriptions(textEditProspect.getText());
                 treatment.setTests(textEditTests.getText());
                 treatment.setDiagnosis(textEditDiagnosis.getText());
-                treatment.setPatient(patient);
+                treatment.setPatient(Main.patientSearchData);
                 treatment.setComplaint(textEditComplaint.getText());
-                treatment.setDoctor(doctor);
 
-                if(comboBox1.getSelectedItem() == null){
-                    AlertBox.ShowError(treatmentCreatePanel, "Bir TC kimlik numarası seçiniz!!");
+
+                if(Main.patientSearchData == null){
+                    AlertBox.ShowError(treatmentCreatePanel, "Bu TC numarası ile bir hasta bulunmuyor!!");
                 }else{
                     try {
                         account = (Account) Main.data;
                         doctor = DoctorController.getDoctorById(account.getId());
+                        treatment.setDoctor(doctor);
+
                         TreatmentController.createTreatment(treatment);
                         AlertBox.ShowError(treatmentCreatePanel, "Tedavi kaydı başarıyla oluşturuldu");
                     }catch (NullPointerException n){
@@ -75,24 +62,21 @@ public class TreatmentCreate {
             }
         });
 
+        hastaKaydınıGörüntüleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("HastaGoster");
+            }
+        });
+
         geriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Önceki sayfaya gitme
-                Main.visitedPages.pop();
-                Main.changeScreen(Main.visitedPages.lastElement());
+                Main.goBack();
             }
         });
 
-        profilButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //data'daki kullanıcıyı sil
-                Main.data = null;
-                Main.visitedPages.pop();
-                Main.changeScreen("Giris");
-            }
-        });
     }
 
     public JPanel getTreatmentCreatePanel() {

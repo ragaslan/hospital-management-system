@@ -4,7 +4,6 @@ import com.derman.model.Patient;
 import com.derman.views.Login;
 import com.derman.views.appointment.AppointmentCalender;
 import com.derman.views.appointment.AppointmentRecordShow;
-import com.derman.views.appointment.AppointmentSearch;
 import com.derman.views.doctor.DoctorCreate;
 import com.derman.views.menu.*;
 import com.derman.views.patient.PatientCreate;
@@ -30,6 +29,7 @@ public class  Main {
     public static Object data = null;
 
     public static String afterPatientSearch = "";
+
     public static Patient patientSearchData = null;
 
     public static CardLayout cardLayout;
@@ -45,9 +45,6 @@ public class  Main {
         visitedPages.push(screenName);
         cardLayout.show(cardPanel,screenName);
     }
-
-
-
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();
@@ -69,7 +66,6 @@ public class  Main {
         // appointment
         AppointmentCalender appointmentCalender = new AppointmentCalender();
         AppointmentRecordShow appointmentRecordShow = new AppointmentRecordShow();
-        AppointmentSearch appointmentSearch = new AppointmentSearch();
 
         // doctor
         DoctorCreate doctorCreate = new DoctorCreate();
@@ -107,7 +103,6 @@ public class  Main {
         // appointment
         cardPanel.add(appointmentCalender.getAppointmentCalenderPanel(),"RandevuEkrani");
         cardPanel.add(appointmentRecordShow.getAppointmentRecordShowPanel(),"RandevuKayitGoster");
-        cardPanel.add(appointmentSearch.getAppointmentSearchPanel(),"RandevuAra");
 
         // doctor
         cardPanel.add(doctorCreate.getDoctorCreatePanel(),"DoktorOlustur");

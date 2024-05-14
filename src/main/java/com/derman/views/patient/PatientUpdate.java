@@ -8,13 +8,11 @@ import com.derman.views.alerts.AlertBox;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 import static com.derman.controller.PatientController.getPatientbyTC;
 
 public class PatientUpdate {
-    private JButton profilButton;
     private JButton geriButton;
     private JTextField textAd;
     private JTextField textKnownI;
@@ -26,16 +24,14 @@ public class PatientUpdate {
     private JTextField textAlergies;
     private JButton bilgileriGüncelleButton;
     private JPanel patientUpdatePanel;
-    private JLabel tc_label;
-    private JTextField patientTc;
     private Patient patient;
 
     public PatientUpdate() {
 
-        DocumentListener textListener = new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                patient = getPatientbyTC(patientTc.getText());
+        ComponentListener componentListener = new ComponentAdapter() {
+            public void componentShown(ComponentEvent e) {
+                patient = Main.patientSearchData;
+                System.out.println(patient.getPhone());
                 if(patient != null){
                     textAd.setText(patient.getName());
                     textSoyad.setText(patient.getSurname());
@@ -56,35 +52,9 @@ public class PatientUpdate {
                     textKnownI.setText("");
                 }
             }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                patient = getPatientbyTC(patientTc.getText());
-                if(patient != null){
-                    textAd.setText(patient.getName());
-                    textSoyad.setText(patient.getSurname());
-                    textTc.setText(patient.getTc());
-                    textTelNo.setText(patient.getPhone());
-                    textaddress.setText(patient.getAddress());
-                    textBlood.setText(patient.getBlood());
-                    textAlergies.setText(patient.getAlergies());
-                    textKnownI.setText(patient.getDiseases());
-                }else{
-                    textAd.setText("");
-                    textSoyad.setText("");
-                    textTc.setText("");
-                    textTelNo.setText("");
-                    textaddress.setText("");
-                    textBlood.setText("");
-                    textAlergies.setText("");
-                    textKnownI.setText("");
-                }
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) { }
         };
-        patientTc.getDocument().addDocumentListener(textListener);
+        patientUpdatePanel.addComponentListener(componentListener);
+
 
         bilgileriGüncelleButton.addActionListener(new ActionListener() {
             @Override
@@ -107,10 +77,10 @@ public class PatientUpdate {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Önceki sayfaya gitme
-                Main.visitedPages.pop();
-                Main.changeScreen(Main.visitedPages.lastElement());
+                Main.goBack();
             }
         });
+
     }
 
     public JPanel getPatientUpdatePanel() {

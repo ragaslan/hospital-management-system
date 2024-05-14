@@ -26,6 +26,7 @@ public class DoctorController {
                             resultSet.getString("username"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
+                            resultSet.getString("phone"),
                             resultSet.getString("password"),
                             resultSet.getString("role"),
                             null
@@ -55,6 +56,7 @@ public class DoctorController {
                             resultSet.getString("username"),
                             resultSet.getString("name"),
                             resultSet.getString("surname"),
+                            resultSet.getString("phone"),
                             null,
                             resultSet.getString("role"),
                             polyclinic
@@ -68,5 +70,25 @@ public class DoctorController {
             return null;
         }
         return null;
+    }
+
+    public static void createDoctor(Doctor doctor) {
+        try(var connection = Db.connect()){
+            if (connection != null){
+                String sql = "insert into account(username, name , surname, password, role, phone, polyclinic_id) values(?,?,?,?,?,?,?)";
+                PreparedStatement pstmt = connection.prepareStatement(sql);
+                pstmt.setString(1, doctor.getUsername());
+                pstmt.setString(2, doctor.getName());
+                pstmt.setString(3, doctor.getSurname());
+                pstmt.setString(4, doctor.getPassword());
+                pstmt.setString(5, doctor.getRole());
+                pstmt.setString(6,doctor.getPhone());
+                pstmt.setInt(7, doctor.getPolyclinic().getId());
+
+                pstmt.executeUpdate();
+            }
+        }catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
     }
 }

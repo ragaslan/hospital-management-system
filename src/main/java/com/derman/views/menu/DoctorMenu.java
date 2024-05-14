@@ -18,14 +18,16 @@ public class DoctorMenu {
         hastaKaydıGüncellemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("HastaGuncelle");
+                Main.afterPatientSearch = "HastaGuncelle";
+                Main.changeScreen("HastaAra");
             }
         });
 
         hastaKaydıGörüntülemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("HastaGoster");
+                Main.afterPatientSearch = "HastaGoster";
+                Main.changeScreen("HastaAra");
             }
         });
 
@@ -42,7 +44,8 @@ public class DoctorMenu {
         tedaviKaydıOluşturmaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("TedaviOlustur");
+                Main.afterPatientSearch = "TedaviOlustur";
+                Main.changeScreen("HastaAra");
             }
         });
 

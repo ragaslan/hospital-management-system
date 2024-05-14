@@ -23,17 +23,40 @@ public class ChiefDoctorMenu{
         hastaKaydıGüncellemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("HastaGuncelle");
+                Main.afterPatientSearch = "HastaGuncelle";
+                Main.changeScreen("HastaAra");
             }
         });
 
         hastaKaydıGörüntülemeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("HastaGoster");
+                Main.afterPatientSearch = "HastaGoster";
+                Main.changeScreen("HastaAra");
             }
         });
 
+        tedaviKaydıOluşturmaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.afterPatientSearch = "TedaviOlustur";
+                Main.changeScreen("HastaAra");
+            }
+        });
+
+        yeniDoktorKaydıButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("DoktorOlustur");
+            }
+        });
+
+        yeniPoliklinikKaydıButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Main.changeScreen("PoliklinikOlustur");
+            }
+        });
 
         profileButton.addActionListener(new ActionListener() {
             @Override
@@ -45,12 +68,7 @@ public class ChiefDoctorMenu{
             }
         });
 
-        tedaviKaydıOluşturmaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.changeScreen("TedaviOlustur");
-            }
-        });
+
 
         //Compenent görünür olduğunda trigger'lanır
         ComponentListener componentListener = new ComponentAdapter() {

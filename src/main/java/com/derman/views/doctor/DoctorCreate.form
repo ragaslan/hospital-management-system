@@ -148,6 +148,7 @@
           <component id="71159" class="javax.swing.JTextField" binding="textUsername">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="40"/>
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -164,6 +165,7 @@
           <component id="756f7" class="javax.swing.JTextField" binding="textPassword">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="40"/>
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>

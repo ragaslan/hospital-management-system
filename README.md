@@ -1,6 +1,6 @@
 <h1>Hospital Management System</h1>
 <p>
-  definition of project will be here
+  We developed a Hospital Management System by using Java. This is a desktop application and this is created for our Software Engineering Lesson in Yıldız Technical University.
 </p>
 
 
